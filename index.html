@@ -886,12 +886,23 @@ html { -webkit-text-size-adjust: 100%; }
 .lp.dim { opacity: .25; }
 .lp-lbl { background: rgba(21,38,49,.9); color: #fff; border: 1px solid var(--line); font-size: 12px; font-weight: 700; padding: 2px 6px; box-shadow: none; }
 .lp-lbl::before { display: none; } .lp-lbl.dim { opacity: .3; }
-.labels-off .lp-lbl { display: none; }
+.labels-off .lp-lbl.sec { display: none; }
+.lp-lbl { white-space: nowrap; }
 .leaflet-container { font: inherit; } .leaflet-control-attribution { font-size: 10px; }
 @media (max-width: 640px) { .wrap.mode-leaf .stage { aspect-ratio: 1000 / 900 !important; } .lp b { width: 34px; height: 34px; margin: 0; } }
 
 .leaflet-control-layers-toggle { background-image: none !important; width: auto !important; min-width: 36px; height: 36px !important; line-height: 36px; padding: 0 10px; }
 .leaflet-control-layers-toggle::after { content: '🗺 圖層'; color: #223; font-weight: 700; font-size: 13px; }
+
+/* ── 景點間交通建議 ── */
+.transit { margin: 18px 0 0; padding: 10px 14px; border: 1px dashed var(--line); border-left: 3px solid var(--c, var(--mute)); border-radius: 6px; background: rgba(255,255,255,.03); font-size: 14px; line-height: 1.6; }
+.t-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; color: #fff; font-weight: 700; }
+.t-icon { font-size: 16px; }
+.t-time { color: #5bb6df; font-weight: 600; }
+.t-next { color: var(--ink); margin-top: 2px; font-size: 13px; }
+.t-note { color: var(--mute); font-size: 13px; margin-top: 2px; }
+.transit-legend { margin: 28px 0 -30px; padding: 10px 14px; background: var(--card); border: 1px solid var(--line); border-radius: 6px; font-size: 13px; color: var(--ink); }
+.transit-legend span { display: block; color: var(--mute); margin-top: 4px; }
 </style>
 </head>
 <body>
@@ -940,6 +951,7 @@ html { -webkit-text-size-adjust: 100%; }
     </div>
 
     <!-- Lofoten 行程列表 -->
+    <div class="transit-legend">🚗 開車　🚶 步行　🚌 公車　🚕 計程車　⛴ 渡輪　<span>各站之間的交通時間為估算值（含少量停車與上下車時間），10 月中旬路面可能濕滑，建議預留 10–20% 緩衝，出發前請以 Google Maps 即時資訊為準。</span></div>
     <div class="day-divider">Day 4：10/15 (出發與跨海)</div>
     <section class="c-d1">
         <h2>✈️ 交通日：博多出發與跨海渡輪</h2>
@@ -956,6 +968,7 @@ html { -webkit-text-size-adjust: 100%; }
                         </div>
                     </div>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚶</span><span class="t-mode">步行</span><span class="t-time">約 5 分</span></div><div class="t-next">下一站：領取自駕車</div><div class="t-note">機場航廈內走到 Sixt 櫃檯</div></div>
             </li>
             <li data-n="2" class="clickable-li" data-loc="L1" data-scroll tabindex="0" role="button">
                 <div class="time-badge">14:00</div>
@@ -965,6 +978,7 @@ html { -webkit-text-size-adjust: 100%; }
                         <div class="item-desc">於機場 Sixt 櫃檯領取 8 人座租車，博多市區短暫觀光補給。</div>
                     </div>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚗</span><span class="t-mode">開車</span><span class="t-time">約 10 分 · 約 4 km</span></div><div class="t-next">下一站：跨海渡輪前往南島</div><div class="t-note">機場到博多港渡輪碼頭；請依船票報到時間提前抵達排隊</div></div>
             </li>
             <li data-n="3">
                 <div class="time-badge">16:00</div>
@@ -974,6 +988,7 @@ html { -webkit-text-size-adjust: 100%; }
                         <div class="item-desc">搭乘 Torghatten 渡輪跨海前往 Moskenes (航程約 3.5–4 小時)。</div>
                     </div>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚗</span><span class="t-mode">開車</span><span class="t-time">約 10 分 · 約 6 km</span></div><div class="t-next">下一站：入住與鱈魚晚餐</div><div class="t-note">Moskenes 下船後沿 E10 前往 Sørvågen，夜間注意野生動物與濕滑路面</div></div>
             </li>
             <li data-n="4" class="clickable-li" data-loc="LH1" data-scroll tabindex="0" role="button">
                 <div class="time-badge">20:30 - 21:00</div>
@@ -1009,6 +1024,7 @@ html { -webkit-text-size-adjust: 100%; }
                     </div>
                     <img class="item-img" data-img="Å 漁村_2.jpg" alt="Å 漁村" loading="lazy" decoding="async" hidden>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚗</span><span class="t-mode">開車</span><span class="t-time">約 20 分 · 約 14 km</span></div><div class="t-next">下一站：海鮮名店午餐</div><div class="t-note">沿 E10 北上，沿途多處景觀停車點；Sakrisøy 旁路肩停車位有限</div></div>
             </li>
             <li data-n="2" class="clickable-li" data-loc="LF1" data-scroll tabindex="0" role="button">
                 <div class="time-badge">11:30 - 13:00</div>
@@ -1024,6 +1040,7 @@ html { -webkit-text-size-adjust: 100%; }
                     </div>
                     <img class="item-img" data-img="Anita's Sjømat_2.jpg" alt="Anita's Sjømat" loading="lazy" decoding="async" hidden>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚶</span><span class="t-mode">步行</span><span class="t-time">約 5 分 · 約 200 m</span></div><div class="t-next">下一站：Olenilsøya 輕鬆健行</div><div class="t-note">從魚堡店步行到 Olenilsøya 路口，即是步道入口</div></div>
             </li>
             <li data-n="3" class="clickable-li" data-loc="L3" data-scroll tabindex="0" role="button">
                 <div class="time-badge">13:30 - 15:00</div>
@@ -1038,6 +1055,7 @@ html { -webkit-text-size-adjust: 100%; }
                     </div>
                     <img class="item-img" data-img="Olenilsøya.jpg" alt="Olenilsøya" loading="lazy" decoding="async" hidden>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚗</span><span class="t-mode">開車</span><span class="t-time">約 5 分 · 約 2 km</span></div><div class="t-next">下一站：Hamnøy 經典紅屋群</div><div class="t-note">想多走走也可步行約 20–25 分；Hamnøy 橋邊停車位少，建議停後走過去</div></div>
             </li>
             <li data-n="4" class="clickable-li" data-loc="L4" data-scroll tabindex="0" role="button">
                 <div class="time-badge">15:30 - 16:30</div>
@@ -1052,6 +1070,7 @@ html { -webkit-text-size-adjust: 100%; }
                     </div>
                     <img class="item-img" data-img="Hamnøy .jpeg" alt="Hamnøy" loading="lazy" decoding="async" hidden>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚗</span><span class="t-mode">開車</span><span class="t-time">約 15 分 · 約 10 km</span></div><div class="t-next">下一站：日落前回飯店休息</div><div class="t-note">日落前回到 Sørvågen（10 月中旬約 17:15–17:45 日落）</div></div>
             </li>
         </ol>
     </section>
@@ -1066,6 +1085,7 @@ html { -webkit-text-size-adjust: 100%; }
                         <div class="item-desc">天黑前/日落之際安全回到 Sørvågen 飯店梳洗。</div>
                     </div>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚶</span><span class="t-mode">步行 / 短程開車</span><span class="t-time">約 5–10 分</span></div><div class="t-next">下一站：晚餐與極光</div><div class="t-note">晚餐餐廳位置請以實際預約為準</div></div>
             </li>
             <li data-n="6">
                 <div class="time-badge">19:00</div>
@@ -1097,6 +1117,7 @@ html { -webkit-text-size-adjust: 100%; }
                     </div>
                     <img class="item-img" data-img="Nusfjord .webp" alt="Nusfjord" loading="lazy" decoding="async" hidden>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚗</span><span class="t-mode">開車</span><span class="t-time">約 15 分 · 約 12 km</span></div><div class="t-next">下一站：Ramberg 白沙灘與教堂</div><div class="t-note">Nusfjord 村內禁止車輛進入，須停在入口停車場並付門票</div></div>
             </li>
             <li data-n="2" class="clickable-li" data-loc="L6" data-scroll tabindex="0" role="button">
                 <div class="time-badge">11:00 - 12:00</div>
@@ -1111,6 +1132,7 @@ html { -webkit-text-size-adjust: 100%; }
                     </div>
                     <img class="item-img" data-img="Ramberg .webp" alt="Ramberg" loading="lazy" decoding="async" hidden>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚗</span><span class="t-mode">開車</span><span class="t-time">約 45 分 · 約 40 km</span></div><div class="t-next">下一站：Haukland 海岸步道</div><div class="t-note">經 Nappstraum 海底隧道往北，再轉往 Haukland / Uttakleiv 方向</div></div>
             </li>
             <li data-n="3" class="clickable-li" data-loc="L7" data-scroll tabindex="0" role="button">
                 <div class="time-badge">12:30 - 14:00</div>
@@ -1125,6 +1147,7 @@ html { -webkit-text-size-adjust: 100%; }
                     </div>
                     <img class="item-img" data-img="Haukland .jpeg" alt="Haukland" loading="lazy" decoding="async" hidden>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚗</span><span class="t-mode">開車</span><span class="t-time">約 20 分 · 約 16 km</span></div><div class="t-next">下一站：Leknes 市區採買</div><div class="t-note">回到 Leknes 市區，超市請留意營業時間</div></div>
             </li>
             <li data-n="4" class="clickable-li" data-loc="L8" data-scroll tabindex="0" role="button">
                 <div class="time-badge">14:30 - 16:00</div>
@@ -1139,6 +1162,7 @@ html { -webkit-text-size-adjust: 100%; }
                     </div>
                     <img class="item-img" data-img="Lenknes.jpg" alt="Leknes" loading="lazy" decoding="async" hidden>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚗</span><span class="t-mode">開車</span><span class="t-time">約 25 分 · 約 20 km</span></div><div class="t-next">下一站：前往巴爾斯塔 (Ballstad)</div><div class="t-note">往西南前往 Ballstad，建議趕在日落前抵達</div></div>
             </li>
         </ol>
     </section>
@@ -1157,6 +1181,7 @@ html { -webkit-text-size-adjust: 100%; }
                         </div>
                     </div>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚶</span><span class="t-mode">步行</span><span class="t-time">約 1–2 分</span></div><div class="t-next">下一站：碼頭晚餐</div><div class="t-note">晚餐餐廳與公寓同棟</div></div>
             </li>
             <li data-n="6" class="clickable-li" data-loc="LH2" data-scroll tabindex="0" role="button">
                 <div class="time-badge">19:00</div>
@@ -1188,6 +1213,7 @@ html { -webkit-text-size-adjust: 100%; }
                     </div>
                     <img class="item-img" data-img="Henningsvær.jpg" alt="Henningsvær" loading="lazy" decoding="async" hidden>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚗</span><span class="t-mode">開車</span><span class="t-time">約 35 分 · 約 25 km</span></div><div class="t-next">下一站：Svinøya 漁業島漫步</div><div class="t-note">Henningsvær 往 Svolvær 方向，沿 Route 816 / E10 前進</div></div>
             </li>
             <li data-n="2" class="clickable-li" data-loc="L10" data-scroll tabindex="0" role="button">
                 <div class="time-badge">12:30 - 13:30</div>
@@ -1203,6 +1229,7 @@ html { -webkit-text-size-adjust: 100%; }
                     </div>
                     <img class="item-img" data-img="Svinøya.jpeg" alt="Svinøya" loading="lazy" decoding="async" hidden>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚶</span><span class="t-mode">步行</span><span class="t-time">約 5–10 分 · 約 500 m</span></div><div class="t-next">下一站：市區觀光與採買</div><div class="t-note">從 Svinøya 走回 Svolvær 市區</div></div>
             </li>
             <li data-n="3" class="clickable-li" data-loc="L10" data-scroll tabindex="0" role="button">
                 <div class="time-badge">14:30 - 16:00</div>
@@ -1212,6 +1239,7 @@ html { -webkit-text-size-adjust: 100%; }
                         <div class="item-desc">慢遊 Svolvær 市區（可參觀北極光中心），準備登船物資。</div>
                     </div>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚶</span><span class="t-mode">步行 / 短程開車</span><span class="t-time">約 5–10 分</span></div><div class="t-next">下一站：完成還車</div><div class="t-note">視還車地點而定，建議還車前先加滿油並拍照存證</div></div>
             </li>
             <li data-n="4" class="clickable-li" data-loc="L10" data-scroll tabindex="0" role="button">
                 <div class="time-badge">16:30</div>
@@ -1221,6 +1249,7 @@ html { -webkit-text-size-adjust: 100%; }
                         <div class="item-desc">17:00 租車處關門前完成還車手續，結束羅弗敦自駕。</div>
                     </div>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚶</span><span class="t-mode">步行</span><span class="t-time">約 5–10 分</span></div><div class="t-next">下一站：登上跨夜渡輪</div><div class="t-note">從還車處走到 Svolvær 港口碼頭；行李可先寄放或一併拖行，距登船還有較長空檔</div></div>
             </li>
         </ol>
     </section>
@@ -1275,6 +1304,7 @@ html { -webkit-text-size-adjust: 100%; }
     </div>
 
     <!-- Tromso 行程列表 -->
+    <div class="transit-legend">🚗 開車　🚶 步行　🚌 公車　🚕 計程車　⛴ 渡輪　<span>各站之間的交通時間為估算值（含少量停車與上下車時間），10 月中旬路面可能濕滑，建議預留 10–20% 緩衝，出發前請以 Google Maps 即時資訊為準。</span></div>
     <div class="day-divider">Day 8：10/19 (峽灣與夜景)</div>
     <section class="c-d1">
         <h2>🚠 下午：跨海峽灣風光與高空全景</h2>
@@ -1287,6 +1317,7 @@ html { -webkit-text-size-adjust: 100%; }
                         <div class="item-desc">渡輪上享用早午餐，漫步至甲板飽覽北歐峽灣風光，下午抵達特羅姆瑟下船並入住。</div>
                     </div>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚶</span><span class="t-mode">步行</span><span class="t-time">碼頭→住宿約 5–8 分；放行李後到橋邊約 15–20 分 · 約 1.2 km</span></div><div class="t-next">下一站：特羅姆瑟大橋漫步</div><div class="t-note">下船後先到 Skaret 寄放行李 / 入住，再步行到大橋</div></div>
             </li>
             <li data-n="2" class="clickable-li" data-loc="T1" data-scroll tabindex="0" role="button">
                 <div class="time-badge">15:00 - 15:45</div>
@@ -1301,6 +1332,7 @@ html { -webkit-text-size-adjust: 100%; }
                     </div>
                     <img class="item-img" data-img="特羅姆瑟大橋_2.jpg" alt="特羅姆瑟大橋" loading="lazy" decoding="async" hidden>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚶</span><span class="t-mode">步行 / 計程車</span><span class="t-time">步行約 20–25 分；計程車約 5–8 分 · 約 1.7 km</span></div><div class="t-next">下一站：Fjellheisen 登山纜車</div><div class="t-note">過橋到東岸後前往 Fjellheisen 纜車站；天黑後橋上風大，注意保暖</div></div>
             </li>
             <li data-n="3" class="clickable-li" data-loc="T3" data-scroll tabindex="0" role="button">
                 <div class="time-badge">16:30 - 18:30</div>
@@ -1316,6 +1348,7 @@ html { -webkit-text-size-adjust: 100%; }
                     </div>
                     <img class="item-img" data-img="Fjellheisen 登山纜車_2.jpeg" alt="Fjellheisen 登山纜車" loading="lazy" decoding="async" hidden>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚕</span><span class="t-mode">計程車 / 公車</span><span class="t-time">計程車約 8–10 分；公車含步行約 20 分 · 約 3 km</span></div><div class="t-next">下一站：老字號晚餐</div><div class="t-note">纜車下山後返回市中心 Bardus Bistro，建議先預約用餐時間</div></div>
             </li>
             <li data-n="4" class="clickable-li" data-loc="T11" data-scroll tabindex="0" role="button">
                 <div class="time-badge">19:00</div>
@@ -1352,6 +1385,7 @@ html { -webkit-text-size-adjust: 100%; }
                     </div>
                     <img class="item-img" data-img="北極大教堂_2.jpeg" alt="北極大教堂" loading="lazy" decoding="async" hidden>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚌</span><span class="t-mode">公車 / 步行</span><span class="t-time">公車或計程車約 8–10 分；步行約 30 分 · 約 2 km</span></div><div class="t-next">下一站：特羅姆瑟圖書館</div><div class="t-note">從北極大教堂過橋回市區，前往圖書館</div></div>
             </li>
             <li data-n="6" class="clickable-li" data-loc="T5" data-scroll tabindex="0" role="button">
                 <div class="time-badge">11:00 - 12:30</div>
@@ -1366,6 +1400,7 @@ html { -webkit-text-size-adjust: 100%; }
                     </div>
                     <img class="item-img" data-img="特羅姆瑟圖書館_2.jpeg" alt="特羅姆瑟圖書館" loading="lazy" decoding="async" hidden>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚶</span><span class="t-mode">步行</span><span class="t-time">約 10 分 · 約 800 m</span></div><div class="t-next">下一站：波拉里亞水族館 (Polaria)</div><div class="t-note">沿市區街道往 Polaria 方向走</div></div>
             </li>
             <li data-n="7" class="clickable-li" data-loc="T6" data-scroll tabindex="0" role="button">
                 <div class="time-badge">12:30 - 13:30</div>
@@ -1381,6 +1416,7 @@ html { -webkit-text-size-adjust: 100%; }
                     </div>
                     <img class="item-img" data-img="波拉里亞水族館_2.jpg" alt="波拉里亞水族館" loading="lazy" decoding="async" hidden>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚶</span><span class="t-mode">步行</span><span class="t-time">約 10–15 分 · 約 900 m</span></div><div class="t-next">下一站：市區午餐 / 麥當勞</div><div class="t-note">步行回 Storgata 一帶用餐</div></div>
             </li>
         </ol>
     </section>
@@ -1400,6 +1436,7 @@ html { -webkit-text-size-adjust: 100%; }
                     </div>
                     <img class="item-img" data-img="麥當勞_2.jpg" alt="麥當勞" loading="lazy" decoding="async" hidden>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚶</span><span class="t-mode">步行</span><span class="t-time">約 5–10 分 · 約 500 m</span></div><div class="t-next">下一站：巨怪博物館 (Troll Museum)</div><div class="t-note">飯後步行前往 Troll Museum</div></div>
             </li>
         </ol>
     </section>
@@ -1420,6 +1457,7 @@ html { -webkit-text-size-adjust: 100%; }
                     </div>
                     <img class="item-img" data-img="巨怪博物館 (Troll Museum)_2.jpg" alt="巨怪博物館" loading="lazy" decoding="async" hidden>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚕</span><span class="t-mode">計程車 / 步行</span><span class="t-time">計程車約 6–8 分；步行約 25–30 分 · 約 2 km</span></div><div class="t-next">下一站：Telegrafbukta 海灘</div><div class="t-note">往島嶼南端的 Telegrafbukta，建議在日落前抵達</div></div>
             </li>
             <li data-n="10" class="clickable-li" data-loc="T9" data-scroll tabindex="0" role="button">
                 <div class="time-badge">16:30 - 17:30</div>
@@ -1434,6 +1472,7 @@ html { -webkit-text-size-adjust: 100%; }
                     </div>
                     <img class="item-img" data-img="Telegrafbukta 海灘.jpg" alt="Telegrafbukta 海灘" loading="lazy" decoding="async" hidden>
                 </div>
+                <div class="transit"><div class="t-head"><span class="t-icon">🚕</span><span class="t-mode">計程車 / 步行</span><span class="t-time">計程車約 5–7 分；步行約 20–25 分 · 約 1.5 km</span></div><div class="t-next">下一站：Ølhallen 酒吧與追光</div><div class="t-note">回到市中心港邊的 Ølhallen；21:00 追光團集合時間與地點請再確認</div></div>
             </li>
         </ol>
     </section>
@@ -1813,7 +1852,7 @@ const LL = {   // 約略真實座標(僅供概覽,精確位置請按「Google �
   tromso: { T0: [69.6466, 18.9606], T1: [69.6445, 19.003], T2: [69.6431, 19.0171], T3: [69.6375, 19.0285], T4: [69.649, 18.9565], T5: [69.6485, 18.9602], T6: [69.643, 18.964],
     T7: [69.6478, 18.9585], T8: [69.6482, 18.9545], T9: [69.64, 18.927], T10: [69.6502, 18.9564], T11: [69.649, 18.9535], T12: [69.647, 18.957], T13: [69.6493, 18.9573], TH: [69.6462, 18.9568] }
 };
-const LABEL_ZOOM = { lofoten: 9, tromso: 16 };
+const LABEL_ZOOM = { lofoten: 9, tromso: 14 };
 const LBLDIR = { LF1: 'left', L3: 'bottom', L4: 'right', T4: 'left', T8: 'left', T11: 'left', T10: 'right', T13: 'right', T12: 'bottom', TH: 'bottom', T5: 'right', T7: 'left' };
 const LBLOFF = { left: [-14, 0], right: [14, 0], bottom: [0, 14] };
 const BASES = {
@@ -1845,10 +1884,24 @@ function drawLeaf(region, sel) {
     const html = '<b data-id="' + id + '" class="' + (act ? 'active' : '') + '" style="' + (shown.length ? 'background:' + DAYCOL[region][shown[0]] + ';font-size:' + (t.length > 2 ? 11 : 14) + 'px' : '') + '">' +
       (shown.length ? t : (p.i || '·')) + (shown.length && p.i ? '<i>' + p.i + '</i>' : '') + '</b>';
     const m = L.marker(LL[region][id], { icon: L.divIcon({ className: 'lp' + (shown.length ? '' : ' ref') + (dim ? ' dim' : ''), html, iconSize: [34, 34], iconAnchor: [17, 17] }), title: p.lb, zIndexOffset: shown.length ? 1000 : 0, keyboard: true });
-    m.bindTooltip(p.lb, { permanent: true, direction: LBLDIR[id] || 'right', offset: LBLOFF[LBLDIR[id] || 'right'], className: 'lp-lbl' + (dim ? ' dim' : '') });
+    m.bindTooltip(p.lb, { permanent: true, direction: LBLDIR[id] || 'right', offset: LBLOFF[LBLDIR[id] || 'right'], className: 'lp-lbl' + (dim ? ' dim' : '') + (shown.length ? '' : ' sec') + ' t-' + id });
     m.on('click', () => showInfo(region, id));
     m.addTo(L_.layer);
   }
+  setTimeout(() => declutter(region), 60);
+}
+function declutter(region) {
+  const L_ = leaf[region]; if (!L_ || !L_.host.clientWidth) return;
+  const els = [...L_.host.querySelectorAll('.lp-lbl')];
+  els.forEach(e => { e.style.visibility = ''; });
+  const act = current[region], rank = e => e.classList.contains('t-' + act) ? 0 : e.classList.contains('sec') ? 2 : 1;
+  const vis = els.filter(e => getComputedStyle(e).display !== 'none').sort((a, b) => rank(a) - rank(b));
+  const boxes = [];
+  vis.forEach(e => {
+    const r = e.getBoundingClientRect();
+    const hit = boxes.some(b => !(r.right + 2 < b.left || r.left - 2 > b.right || r.bottom + 1 < b.top || r.top - 1 > b.bottom));
+    if (hit) e.style.visibility = 'hidden'; else boxes.push(r);
+  });
 }
 function fitLeaf(region, sel) {
   const L_ = leaf[region], ids = sel ? state[region].seq[sel] : Object.keys(LL[region]);
@@ -1859,6 +1912,7 @@ function leafSel(region, sel) { if (leaf[region]) { drawLeaf(region, sel); fitLe
 function leafReveal(region, id) {
   const L_ = leaf[region]; if (!L_) return;
   L_.layer.getLayers().forEach(m => { const el = m.getElement?.(); el?.querySelector('b')?.classList.toggle('active', el.querySelector('b').dataset.id === id); });
+  setTimeout(() => declutter(region), 60);
   const ll = LL[region][id]; if (ll && L_.fitted && !L_.map.getBounds().pad(-.1).contains(ll)) L_.map.panTo(ll);
 }
 function setupLeaflet(region) {
@@ -1869,8 +1923,8 @@ function setupLeaflet(region) {
   const L_ = leaf[region] = { map, host, layer: L.layerGroup().addTo(map), fitted: false };
   let ok = 0, bad = 0;
   Object.values(bases).forEach(l => { l.on('tileload', () => ok++); l.on('tileerror', () => { if (!ok && ++bad >= 6) setMode(region, 'svg', true); }); });
-  const labels = () => host.classList.toggle('labels-off', map.getZoom() < LABEL_ZOOM[region]);
-  map.on('zoomend', labels);
+  const labels = () => { host.classList.toggle('labels-off', map.getZoom() < LABEL_ZOOM[region]); declutter(region); };
+  map.on('zoomend', labels); map.on('moveend', () => declutter(region));
   new ResizeObserver(() => { map.invalidateSize(); if (!L_.fitted && host.clientWidth) { L_.fitted = true; fitLeaf(region, 0); labels(); } }).observe(host);
   const bar = $('modebar-' + region);
   [['leaf', '🏔 地形圖'], ['svg', '🗺 示意圖']].forEach(([m, t]) => { const b = document.createElement('button'); b.className = 'chip'; b.dataset.mode = m; b.textContent = t; bar.appendChild(b); });
